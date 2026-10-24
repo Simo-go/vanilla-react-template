@@ -9,7 +9,18 @@ export default defineConfig([
   globalIgnores(["dist"]),
   {
     files: ["**/*.{js,jsx}"],
-    extends: [js.configs.recommended, reactHooks.configs.flat.recommended, reactRefresh.configs.vite, eslintReact.configs.recommended],
+    extends: [
+      js.configs.recommended,
+      reactHooks.configs.flat.recommended,
+      reactRefresh.configs.vite,
+      eslintReact.configs.recommended,
+      eslintPluginTailwindcss.configs.recommended,
+    ],
+        settings: {
+      tailwindcss: {
+        cssConfigPath: "./src/index.css",
+      },
+
     languageOptions: {
       globals: globals.browser,
       parserOptions: { ecmaFeatures: { jsx: true } },
